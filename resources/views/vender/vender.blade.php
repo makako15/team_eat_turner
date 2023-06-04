@@ -1,23 +1,4 @@
-{{--
 
-  ____          _____               _ _           _
- |  _ \        |  __ \             (_) |         | |
- | |_) |_   _  | |__) |_ _ _ __ _____| |__  _   _| |_ ___
- |  _ <| | | | |  ___/ _` | '__|_  / | '_ \| | | | __/ _ \
- | |_) | |_| | | |  | (_| | |   / /| | |_) | |_| | ||  __/
- |____/ \__, | |_|   \__,_|_|  /___|_|_.__/ \__, |\__\___|
-         __/ |                               __/ |
-        |___/                               |___/
-
-    Blog:       https://parzibyte.me/blog
-    Ayuda:      https://parzibyte.me/blog/contrataciones-ayuda/
-    Contacto:   https://parzibyte.me/blog/contacto/
-
-    Copyright (c) 2020 Luis Cabrera Benito
-    Licenciado bajo la licencia MIT
-
-    El texto de arriba debe ser incluido en cualquier redistribucion
---}}
 @extends("maestra")
 @section("titulo", "Realizar venta")
 @section("contenido")
@@ -103,4 +84,166 @@
             @endif
         </div>
     </div>
+    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/estilos.css">
+    <script src="app.js" async></script>
+    <title>Team Eat Turner</title>
+</head>
+<body>
+    <header>
+        
+    </header>
+    <section class="contenedor">
+        <!-- Contenedor de elementos -->
+        <div class="contenedor-items">
+            <div class="item">
+                <span class="titulo-item">Chips Fuego</span>
+                <img src="/img/chips-moradas.png" class="img-item">
+                <span class="precio-item">$15.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Agua ciel 1L</span>
+                <img src="/img/agua-ciel.png" alt="" class="img-item">
+                <span class="precio-item">$25.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Coca-Cola 600ml</span>
+                <img src="/img/coca-cola.png" alt="" class="img-item">
+                <span class="precio-item">$35.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Chicle Orbit</span>
+                <img src="/img/chicle orbit.png" alt="" class="img-item">
+                <span class="precio-item">$3.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Chilaquiles Verdes</span>
+                <img src="/img/chilaquiiles.png" alt="" class="img-item">
+                <span class="precio-item">$32.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Choco Roles</span>
+                <img src="/img/chocoroles.png" alt="" class="img-item">
+                <span class="precio-item">$18.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Fanta de Fresa 600ml</span>
+                <img src="/img/fanta-fresa.png" alt="" class="img-item">
+                <span class="precio-item">$18.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Galletas Emperador Senzo</span>
+                <img src="/img/galletas-emperador-senzo.png" alt="" class="img-item">
+                <span class="precio-item">$20.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Malteada de Chocolate</span>
+                <img src="/img/malteada.png" alt="" class="img-item">
+                <span class="precio-item">$20.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Hamburguesa</span>
+                <img src="/img/hamburguesa.png" alt="" class="img-item">
+                <span class="precio-item">$30.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Hielitos</span>
+                <img src="/img/Hielitos.png" alt="" class="img-item">
+                <span class="precio-item">$18.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Jugo Pulpy 545ml</span>
+                <img src="/img/Jugo-pulpit.png" alt="" class="img-item">
+                <span class="precio-item">$18.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Jugo de Vidrio Durazno 545ml</span>
+                <img src="/img/jugo-vidrio-durazno.png" alt="" class="img-item">
+                <span class="precio-item">$18.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Paleta Trabalenguas</span>
+                <img src="/img/paleta.png" alt="" class="img-item">
+                <span class="precio-item">$5.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Quesadillas</span>
+                <img src="/img/quesadillas.png" alt="" class="img-item">
+                <span class="precio-item">$18.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Sandwich Calientes</span>
+                <img src="/img/sandwich-calientes.png" alt="" class="img-item">
+                <span class="precio-item">$12.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Takis Fuego</span>
+                <img src="/img/takis.png" alt="" class="img-item">
+                <span class="precio-item">$18.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Frappe</span>
+                <img src="/img/frape.png" alt="" class="img-item">
+                <span class="precio-item">$40.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Maruchan</span>
+                <img src="/img/maruchan.png" alt="" class="img-item">
+                <span class="precio-item">$22.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Vuala</span>
+                <img src="/img/vuala.png" alt="" class="img-item">
+                <span class="precio-item">$18.00</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+        </div>
+        <!-- Carrito de Compras -->
+        <div class="carrito" id="carrito">
+            <div class="header-carrito">
+                <h2>Tu Carrito</h2>
+            </div>
+
+                <div class="carrito-items">
+            
+                </div>
+            <div class="carrito-total">
+                <div class="fila">
+                    <strong>Tu Total</strong>
+                    <span class="carrito-precio-total">
+                    </span>
+                </div>
+                <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
+            </div>
+        </div>
+    </section>
+    <script src="/js/aplicacion.js"></script>
+</body>
+</html>
 @endsection

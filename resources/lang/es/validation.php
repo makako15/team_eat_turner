@@ -1,17 +1,6 @@
 <?php
 return [
-    //TODO: terminar validaciones
-    // Tomado de: https://parzibyte.me/blog/2019/06/20/laravel-mensajes-validacion-espanol/
-    /*
-    |--------------------------------------------------------------------------
-    | Validation Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines contain the default error messages used by
-    | the validator class. Some of these rules have multiple versions such
-    | as the size rules. Feel free to tweak each of these messages here.
-    |
-    */
+
 
     'accepted' => 'El campo :attribute debe ser aceptado.',
     'active_url' => 'El campo :attribute no es una URL válida.',

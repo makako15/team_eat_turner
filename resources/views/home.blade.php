@@ -10,7 +10,7 @@
     ] as $modulos)
         <div class="col-12 pb-2">
             <div class="row">
-                @foreach($modulos as $modulo)
+               <!-- @foreach($modulos as $modulo)
                     <div class="col-12 col-md-3">
                         <div class="card">
                             <img class="card-img-top" src="{{url("/img/$modulo.png")}}">
@@ -25,7 +25,7 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @endforeach -->
             </div>
         </div>
     @endforeach

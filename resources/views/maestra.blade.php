@@ -64,7 +64,7 @@
                     </a>
                 </li>
             @endauth
-            <li class="nav-item">
+           <li class="nav-item">
                 <a class="nav-link" href="{{route("soporte.index")}}">Soporte&nbsp;<i
                         class="fa fa-hands-helping"></i></a>
             </li>
@@ -75,7 +75,7 @@
     </div>
 </nav>
 <script type="text/javascript">
-    // Tomado de https://parzibyte.me/blog/2019/06/26/menu-responsivo-bootstrap-4-sin-dependencias/
+
     document.addEventListener("DOMContentLoaded", () => {
         const menu = document.querySelector("#menu"),
             botonMenu = document.querySelector("#botonMenu");
