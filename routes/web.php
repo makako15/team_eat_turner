@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
+
 Route::get('/', function () {
     return redirect()->route("home");
 });
@@ -37,4 +38,9 @@ Route::middleware("auth")
         Route::post("/productoDeVenta", "VenderController@agregarProductoVenta")->name("agregarProductoVenta");
         Route::delete("/productoDeVenta", "VenderController@quitarProductoDeVenta")->name("quitarProductoDeVenta");
         Route::post("/terminarOCancelarVenta", "VenderController@terminarOCancelarVenta")->name("terminarOCancelarVenta");
+
+
+        Route::get('/prueba', 'HomeController@hola')->name('prueba');
+        
+
     });
