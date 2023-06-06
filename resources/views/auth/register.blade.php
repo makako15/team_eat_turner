@@ -3,17 +3,19 @@
     Registrar
 @endsection
 @section('contenido')
+<link rel="stylesheet" href="/css/estilos.css">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Registrar</div>
+            <div class="background-image">
+                <div class="card-header" id="registro">Registrar</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Nombre</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right" id="nombre">Nombre</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
@@ -29,7 +31,7 @@
 
                         <div class="form-group row">
                             <label for="email"
-                                   class="col-md-4 col-form-label text-md-right">Correo electrónico</label>
+                                   class="col-md-4 col-form-label text-md-right" id="correo">Correo electrónico</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
@@ -45,7 +47,7 @@
 
                         <div class="form-group row">
                             <label for="password"
-                                   class="col-md-4 col-form-label text-md-right">Contraseña</label>
+                                   class="col-md-4 col-form-label text-md-right" id="contraseña">Contraseña</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password"
@@ -62,7 +64,7 @@
 
                         <div class="form-group row">
                             <label for="password-confirm"
-                                   class="col-md-4 col-form-label text-md-right">Confirmar contraseña</label>
+                                   class="col-md-4 col-form-label text-md-right" id="confirmar">Confirma contraseña</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control"
@@ -72,10 +74,11 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" id="boton">
                                     Registrar
                                 </button>
                             </div>
+                        </div>
                         </div>
                     </form>
                 </div>

@@ -1,4 +1,4 @@
-/* ESTOS SON LOS ESTILOS DE LA VISA DEL MENU*/
+/* ESTOS SON LOS ESTILOS DE LA VISA DEL ventas*/
 #turner{
     height: 80%;
     width: 80%;
@@ -220,8 +220,100 @@ header h1{
  }
 
 
+ /* LOGIN */
+.background-image {
+    position: fixed;
+    top: 10%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    background-image: url('/img/5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+      }
+#login{
+    color: #fff;
+    font-size: 40px;
+}
+#correo{
+    color: #fff;
+    margin: 0px 0px 0px 80px;
+    font-weight: bolder;
 
+}
+#contraseña{
+    color: #f3f3f3;
+    margin: 0px 0px 0px 80px;
+    font-weight: bolder;
 
+}
+#recordarme{
+    color: #fff;
+    margin: 0 0 0 120px;
+    font-weight: bolder;
+
+}
+#remember{
+    margin: 0 0 0 100px;
+}
+#boton{
+    margin: 0 0 0 120px;
+}
+
+ /* REGISTRO */
+ .background-image {
+    position: fixed;
+    top: 10%;
+    left: 15%;
+    width: 75%;
+    height: 80%;
+    background-image: url('/img/5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+      }
+#registro{
+    color: #fff;
+    font-size: 40px;
+    font-weight: bolder;
+}
+#nombre{
+    color: #fff;
+    margin: 0px 0px 0px 182px;
+    font-weight: bolder;
+
+}
+#correo{
+    color: #fff;
+    margin: 0px 0px 0px 182px;
+    font-weight: bolder;
+
+}
+#contraseña{
+    color: #f3f3f3;
+    margin: 0px 0px 0px 182px;
+    font-weight: bolder;
+
+}
+#confirmar{
+    color: #fff;
+    margin: 0 0 0 120px;
+    font-weight: bolder;
+
+}
+#confirmar{
+    margin: 0 0 0 182px;
+    font-weight: bolder;
+
+}
+#boton{
+    margin: 0 0 0 120px;
+}
+
+#navar{
+    background: #000;
+}
 
 
 
