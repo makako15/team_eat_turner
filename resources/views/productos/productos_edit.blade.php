@@ -9,10 +9,10 @@
                 @method("PUT")
                 @csrf
                 <div class="form-group">
-                    <label class="label">Código de barras</label>
+                    <label class="label">Código de producto</label>
                     <input required value="{{$producto->codigo_barras}}" autocomplete="off" name="codigo_barras"
                            class="form-control"
-                           type="text" placeholder="Código de barras">
+                           type="text" placeholder="Código de producto">
                 </div>
                 <div class="form-group">
                     <label class="label">Descripción</label>

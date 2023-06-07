@@ -11,7 +11,7 @@
                 <table class="table table-bordered">
                     <thead>
                     <tr>
-                        <th>Código de barras</th>
+                        <th>Código de producto</th>
                         <th>Descripción</th>
                         <th>Precio de compra</th>
                         <th>Precio de venta</th>

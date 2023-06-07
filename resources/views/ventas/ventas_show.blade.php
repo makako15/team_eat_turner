@@ -18,7 +18,7 @@
                 <thead>
                 <tr>
                     <th>Descripción</th>
-                    <th>Código de barras</th>
+                    <th>Código de productos</th>
                     <th>Precio</th>
                     <th>Cantidad</th>
                     <th>Subtotal</th>

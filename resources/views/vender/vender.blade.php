@@ -48,7 +48,7 @@
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th>Código de barras</th>
+                            <th>Código de producto</th>
                             <th>Descripción</th>
                             <th>Precio</th>
                             <th>Cantidad</th>
