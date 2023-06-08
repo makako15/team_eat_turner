@@ -15,7 +15,9 @@
                         <th>Total</th>
                         <th>Ticket de venta</th>
                         <th>Detalles</th>
+                        @can('permiso')
                         <th>Eliminar</th>
+                        @endcan
                     </tr>
                     </thead>
                     <tbody>
@@ -36,11 +38,13 @@
                             </td>
                             <td>
                                 <form action="{{route("ventas.destroy", [$venta])}}" method="post">
+                                    @can('permiso')
                                     @method("delete")
                                     @csrf
                                     <button type="submit" class="btn btn-danger">
                                         <i class="fa fa-trash"></i>
                                     </button>
+                                    @endcan
                                 </form>
                             </td>
                         </tr>

@@ -1,83 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Detalles del Pedido</title>
-    <style>
-        /* Estilos CSS */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
+@extends("maestra")
+@section("titulo", "Realizar venta")
+@section("contenido")
 
-        h1 {
-            color: #333;
-        }
-
-        .order-details {
-            border: 1px solid #ccc;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .order-details h2 {
-            color: #333;
-            font-size: 18px;
-        }
-
-        .order-details p {
-            margin: 0;
-            padding: 0;
-            font-size: 16px;
-        }
-
-        .order-details .item {
-            margin-bottom: 10px;
-        }
-
-        .order-details .item .name {
-            font-weight: bold;
-        }
-
-        .order-details .item .quantity {
-            color: #777;
-        }
-
-        .order-details .item .price {
-            color: #555;
-        }
-
-        .order-details .total {
-            margin-top: 10px;
-        }
-
-        .order-details .total .label {
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <h1>Detalles del Pedido</h1>
-
-    <div class="order-details">
-        <h2>Información del Pedido</h2>
-        <p><strong>Número de Pedido:</strong> {{ $order->order_number }}</p>
-        <p><strong>Fecha:</strong> {{ $order->created_at }}</p>
-        <!-- Agrega más detalles del pedido según tus necesidades -->
-
-        <h2>Productos</h2>
-        @foreach($order->items as $item)
-            <div class="item">
-                <p class="name">{{ $item->product_name }}</p>
-                <p class="quantity">Cantidad: {{ $item->quantity }}</p>
-                <p class="price">Precio Unitario: {{ $item->price }}</p>
-            </div>
-        @endforeach
-
-        <div class="total">
-            <p class="label">Total del Pedido:</p>
-            <p>{{ $order->total }}</p>
-        </div>
+<div class="card-group">
+  <div class="card">
+    <img src="/img/6.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h2 class="card-title">Teléfono </h2>
+      <p class="card-text">Teléfonos: 871-725-23-71 <br> 871-725-57-79 <br> 871-725-58-02</p>
+      <p class="card-text"><small class="text-muted"></small></p>
     </div>
-</body>
-</html>
+  </div>
+  <div class="card">
+    <img src="/img/8.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h2 class="card-title">Ubicación </h2>
+      <p class="card-text">Av. Tecnológico No. 1555 Sur <br>
+Periférico Gómez - Lerdo Km. 14.5, <br>
+Ciudad Lerdo, Estado de
+Durango C.P. 35150.</p>
+      <p class="card-text"><small class="text-muted"></small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="/img/7.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h2 class="card-title">Contactanos</h2>
+      <p align="justify" class="card-text">Es un placer para nosotros brindarte la oportunidad de ponerte en contacto con nuestro equipo. Tu opinión y tus consultas son importantes para nosotros, por lo que hemos creado este correo electrónico exclusivamente para atender tus inquietudes.
+      <h3>teameatturner@gmail.com</h3>
+    </p>
+      <p class="card-text"><small class="text-muted"></small></p>
+    </div>
+  </div>
+</div>
+
+@endsection

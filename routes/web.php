@@ -12,7 +12,7 @@ Route::get("/acerca-de", function () {
     return view("misc.acerca_de");
 })->name("acerca_de.index");
 Route::get("/soporte", function(){
-    return redirect("");
+    return redirect("prueba");
 })->name("soporte.index");
 
 Auth::routes([
@@ -25,6 +25,8 @@ Route::get("/logout", function () {
     Auth::logout();
     return redirect()->route("home");
 })->name("logout");
+
+Route::get('/controlador', 'RolesController@roles');
 
 
 Route::middleware("auth")

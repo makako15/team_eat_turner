@@ -39,21 +39,25 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route("home")}}">Inicio&nbsp;<i class="fa fa-home"></i></a>
                 </li>
+                @can('permiso')
                 <li class="nav-item">
                     <a class="nav-link" href="{{route("productos.index")}}">Productos&nbsp;<i class="fa fa-box"></i></a>
                 </li>
+                @endcan
                 <li class="nav-item">
                     <a class="nav-link" href="{{route("vender.index")}}">Vender&nbsp;<i class="fa fa-cart-plus"></i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route("ventas.index")}}">Ventas&nbsp;<i class="fa fa-list"></i></a>
                 </li>
+                @can('permiso')
                 <li class="nav-item">
                     <a class="nav-link" href="{{route("usuarios.index")}}">Usuarios&nbsp;<i class="fa fa-users"></i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route("clientes.index")}}">Clientes&nbsp;<i class="fa fa-users"></i></a>
                 </li>
+                @endcan
             @endguest
         </ul>
         <ul class="navbar-nav ml-auto">
