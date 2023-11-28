@@ -14,7 +14,7 @@
                             <label for="id_cliente">Cliente</label>
                             <select required class="form-control" name="id_cliente" id="id_cliente">
                                 @foreach($clientes as $cliente)
-                                    <option value="{{$cliente->id}}">{{$cliente->nombre}}</option>
+                                    <option value="{{$cliente->id}}">{{ Auth::user()->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -114,7 +114,7 @@
                 <span class="titulo-item">Agua ciel 1L</span>
                 <img src="/img/agua-ciel.png" alt="" class="img-item">
                 <span class="precio-item"></span>
-                <span class="precio-item">Codigo 16</span>
+                <span class="precio-item">Codigo 2</span>
                 <span class="precio-item">$25.00</span>
                 <!---<button class="boton-item">Agregar al Carrito</button>-->
             </div>
@@ -128,119 +128,119 @@
             <div class="item">
                 <span class="titulo-item">Chicle Orbit</span>
                 <img src="/img/chicle orbit.png" alt="" class="img-item">
-                <span class="precio-item">Codigo 9</span>
+                <span class="precio-item">Codigo 4</span>
                 <span class="precio-item">$3.00</span>
                 <!---<button class="boton-item">Agregar al Carrito</button>-->
             </div>
             <div class="item">
                 <span class="titulo-item">Chilaquiles Verdes</span>
                 <img src="/img/chilaquiiles.png" alt="" class="img-item">
-                <span class="precio-item">Codigo 17</span>
+                <span class="precio-item">Codigo 5</span>
                 <span class="precio-item">$32.00</span>
                 <!---<button class="boton-item">Agregar al Carrito</button>-->
             </div>
             <div class="item">
                 <span class="titulo-item">Choco Roles</span>
                 <img src="/img/chocoroles.png" alt="" class="img-item">
-                <span class="precio-item">Codigo 2</span>
+                <span class="precio-item">Codigo 6</span>
                 <span class="precio-item">$18.00</span>
                 <!---<button class="boton-item">Agregar al Carrito</button>-->
             </div>
             <div class="item">
                 <span class="titulo-item">Fanta de Fresa 600ml</span>
                 <img src="/img/fanta-fresa.png" alt="" class="img-item">
-                <span class="precio-item">Codigo 6</span>
+                <span class="precio-item">Codigo 7</span>
                 <span class="precio-item">$18.00</span>
                 <!---<button class="boton-item">Agregar al Carrito</button>-->
             </div>
             <div class="item">
                 <span class="titulo-item">Galletas Emperador Senzo</span>
                 <img src="/img/galletas-emperador-senzo.png" alt="" class="img-item">
-                <span class="precio-item">Codigo 10</span>
+                <span class="precio-item">Codigo 8</span>
                 <span class="precio-item">$20.00</span>
                 <!---<button class="boton-item">Agregar al Carrito</button>-->
             </div>
             <div class="item">
                 <span class="titulo-item">Malteada de Chocolate</span>
                 <img src="/img/malteada.png" alt="" class="img-item">
-                <span class="precio-item">Codigo 5</span>
+                <span class="precio-item">Codigo 9</span>
                 <span class="precio-item">$20.00</span>
                 <!---<button class="boton-item">Agregar al Carrito</button>-->
             </div>
             <div class="item">
                 <span class="titulo-item">Hamburguesa</span>
                 <img src="/img/hamburguesa.png" alt="" class="img-item">
-                <span class="precio-item">Codigo 4</span>
+                <span class="precio-item">Codigo 10</span>
                 <span class="precio-item">$30.00</span>
                 <!---<button class="boton-item">Agregar al Carrito</button>-->
             </div>
             <div class="item">
                 <span class="titulo-item">Hielitos</span>
                 <img src="/img/Hielitos.png" alt="" class="img-item">
-                <span class="precio-item">Codigo 18</span>
+                <span class="precio-item">Codigo 11</span>
                 <span class="precio-item">$18.00</span>
                 <!---<button class="boton-item">Agregar al Carrito</button>-->
             </div>
             <div class="item">
                 <span class="titulo-item">Jugo Pulpy 545ml</span>
                 <img src="/img/Jugo-pulpit.png" alt="" class="img-item">
-                <span class="precio-item">Codigo 14</span>
+                <span class="precio-item">Codigo 12</span>
                 <span class="precio-item">$18.00</span>
                 <!---<button class="boton-item">Agregar al Carrito</button>-->
             </div>
             <div class="item">
                 <span class="titulo-item">Jugo Del Valle 545ml</span>
                 <img src="/img/jugo-vidrio-durazno.png" alt="" class="img-item">
-                <span class="precio-item">Codigo 19</span>
+                <span class="precio-item">Codigo 13</span>
                 <span class="precio-item">$18.00</span>
                 <!---<button class="boton-item">Agregar al Carrito</button>-->
             </div>
             <div class="item">
                 <span class="titulo-item">Paleta Trabalenguas</span>
                 <img src="/img/paleta.png" alt="" class="img-item">
-                <span class="precio-item">Codigo 15</span>
+                <span class="precio-item">Codigo 14</span>
                 <span class="precio-item">$5.00</span>
                 <!---<button class="boton-item">Agregar al Carrito</button>-->
             </div>
             <div class="item">
                 <span class="titulo-item">Quesadillas</span>
                 <img src="/img/quesadillas.png" alt="" class="img-item">
-                <span class="precio-item">Codigo 12</span>
+                <span class="precio-item">Codigo 15</span>
                 <span class="precio-item">$18.00</span>
                 <!---<button class="boton-item">Agregar al Carrito</button>-->
             </div>
             <div class="item">
                 <span class="titulo-item">Sandwich Calientes</span>
                 <img src="/img/sandwich-calientes.png" alt="" class="img-item">
-                <span class="precio-item">Codigo 8</span>
+                <span class="precio-item">Codigo 16</span>
                 <span class="precio-item">$12.00</span>
                 <!---<button class="boton-item">Agregar al Carrito</button>-->
             </div>
             <div class="item">
                 <span class="titulo-item">Takis Fuego</span>
                 <img src="/img/takis.png" alt="" class="img-item">
-                <span class="precio-item">Codigo 11</span>
+                <span class="precio-item">Codigo 17</span>
                 <span class="precio-item">$18.00</span>
                 <!--<button class="boton-item">Agregar al Carrito</button>-->
             </div>
             <div class="item">
                 <span class="titulo-item">Frappe</span>
                 <img src="/img/frape.png" alt="" class="img-item">
-                <span class="precio-item">Codigo 20</span>
+                <span class="precio-item">Codigo 18</span>
                 <span class="precio-item">$40.00</span>
                 <!--<button class="boton-item">Agregar al Carrito</button>-->
             </div>
             <div class="item">
                 <span class="titulo-item">Maruchan</span>
                 <img src="/img/maruchan.png" alt="" class="img-item">
-                <span class="precio-item">Codigo 7</span>
+                <span class="precio-item">Codigo 19</span>
                 <span class="precio-item">$22.00</span>
                 <!--<button class="boton-item">Agregar al Carrito</button>-->
             </div>
             <div class="item">
                 <span class="titulo-item">Vuala</span>
                 <img src="/img/vuala.png" alt="" class="img-item">
-                <span class="precio-item">Codigo 13</span>
+                <span class="precio-item">Codigo 20</span>
                 <span class="precio-item">$18.00</span>
                 <!--<button class="boton-item">Agregar al Carrito</button>-->
             </div>

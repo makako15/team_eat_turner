@@ -76,6 +76,7 @@ class VenderController extends Controller
 
     public function cancelarVenta()
     {
+        //esto la cancelacion del pedido
         $this->vaciarProductos();
         return redirect()
             ->route("vender.index")
@@ -84,6 +85,7 @@ class VenderController extends Controller
 
     public function quitarProductoDeVenta(Request $request)
     {
+        //esto es la funcion de quitar los productos de la venta antes de terminarla
         $indice = $request->post("indice");
         $productos = $this->obtenerProductos();
         array_splice($productos, $indice, 1);

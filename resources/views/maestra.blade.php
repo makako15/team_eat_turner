@@ -45,7 +45,7 @@
                 </li>
                 @endcan
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route("vender.index")}}">Vender&nbsp;<i class="fa fa-cart-plus"></i></a>
+                    <a class="nav-link" href="{{route("vender.index")}}">Catalogo productos&nbsp;<i class="fa fa-cart-plus"></i></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route("ventas.index")}}">Ventas&nbsp;<i class="fa fa-list"></i></a>

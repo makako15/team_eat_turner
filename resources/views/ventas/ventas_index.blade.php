@@ -13,7 +13,7 @@
                         <th>Fecha</th>
                         <th>Cliente</th>
                         <th>Total</th>
-                        <th>Ticket de venta</th>
+                        <!--<th>Ticket de venta</th>-->
                         <th>Detalles</th>
                         @can('permiso')
                         <th>Eliminar</th>
@@ -26,27 +26,28 @@
                             <td>{{$venta->created_at}}</td>
                             <td>{{$venta->cliente->nombre}}</td>
                             <td>${{number_format($venta->total, 2)}}</td>
-                            <td>
+                         <!--   <td>
                                 <a class="btn btn-info" href="{{route("ventas.ticket", ["id"=>$venta->id])}}">
                                     <i class="fa fa-print"></i>
                                 </a>
-                            </td>
+                            </td> -->
                             <td>
                                 <a class="btn btn-success" href="{{route("ventas.show", $venta)}}">
                                     <i class="fa fa-info"></i>
                                 </a>
                             </td>
-                            <td>
-                                <form action="{{route("ventas.destroy", [$venta])}}" method="post">
-                                    @can('permiso')
+                            @can('permiso') <td>
+                             <form action="{{route("ventas.destroy", [$venta])}}" method="post">
+                                    
                                     @method("delete")
                                     @csrf
                                     <button type="submit" class="btn btn-danger">
                                         <i class="fa fa-trash"></i>
                                     </button>
-                                    @endcan
+                                    
                                 </form>
                             </td>
+                            @endcan
                         </tr>
                     @endforeach
                     </tbody>
