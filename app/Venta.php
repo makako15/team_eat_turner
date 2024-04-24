@@ -11,9 +11,9 @@ class Venta extends Model
     {
         return $this->hasMany("App\ProductoVendido", "id_venta");
     }
-
-    public function cliente()
+    public function usuario()
     {
-        return $this->belongsTo("App\Cliente", "id_cliente");
+        return $this->belongsTo("App\User", "id_usuario");
     }
+     
 }

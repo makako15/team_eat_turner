@@ -24,13 +24,9 @@
                     @foreach($ventas as $venta)
                         <tr>
                             <td>{{$venta->created_at}}</td>
-                            <td>{{$venta->cliente->nombre}}</td>
+                            <td>{{$venta->usuario->name}}</td>
                             <td>${{number_format($venta->total, 2)}}</td>
-                         <!--   <td>
-                                <a class="btn btn-info" href="{{route("ventas.ticket", ["id"=>$venta->id])}}">
-                                    <i class="fa fa-print"></i>
-                                </a>
-                            </td> -->
+                    
                             <td>
                                 <a class="btn btn-success" href="{{route("ventas.show", $venta)}}">
                                     <i class="fa fa-info"></i>

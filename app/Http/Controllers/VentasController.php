@@ -4,52 +4,16 @@
 
 namespace App\Http\Controllers;
 
+
+use PDF;
 use App\Venta;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
-use Mike42\Escpos\Printer;
 
 class VentasController extends Controller
 {
 
-    public function ticket(Request $request)
-    {
-        $venta = Venta::findOrFail($request->get("id"));
-        $nombreImpresora = env("NOMBRE_IMPRESORA");
-        $connector = new WindowsPrintConnector($nombreImpresora);
-        $impresora = new Printer($connector);
-        $impresora->setJustification(Printer::JUSTIFY_CENTER);
-        $impresora->setEmphasis(true);
-        $impresora->text("Ticket de venta\n");
-        $impresora->text($venta->created_at . "\n");
-        $impresora->setEmphasis(false);
-        $impresora->text("Cliente: ");
-        $impresora->text($venta->cliente->nombre . "\n");
-        $impresora->text("\nhttps://parzibyte.me/blog\n");
-        $impresora->text("\n===============================\n");
-        $total = 0;
-        foreach ($venta->productos as $producto) {
-            $subtotal = $producto->cantidad * $producto->precio;
-            $total += $subtotal;
-            $impresora->setJustification(Printer::JUSTIFY_LEFT);
-            $impresora->text(sprintf("%.2fx%s\n", $producto->cantidad, $producto->descripcion));
-            $impresora->setJustification(Printer::JUSTIFY_RIGHT);
-            $impresora->text('$' . number_format($subtotal, 2) . "\n");
-        }
-        $impresora->setJustification(Printer::JUSTIFY_CENTER);
-        $impresora->text("\n===============================\n");
-        $impresora->setJustification(Printer::JUSTIFY_RIGHT);
-        $impresora->setEmphasis(true);
-        $impresora->text("Total: $" . number_format($total, 2) . "\n");
-        $impresora->setJustification(Printer::JUSTIFY_CENTER);
-        $impresora->setTextSize(1, 1);
-        $impresora->text("Gracias por su compra\n");
-        $impresora->text("https://parzibyte.me/blog");
-        $impresora->feed(5);
-        $impresora->close();
-        return redirect()->back()->with("mensaje", "Ticket impreso");
-    }
 
     /**
      * Display a listing of the resource.
@@ -58,12 +22,31 @@ class VentasController extends Controller
      */
     public function index()
     {
-        $ventasConTotales = Venta::join("productos_vendidos", "productos_vendidos.id_venta", "=", "ventas.id")
-            ->select("ventas.*", DB::raw("sum(productos_vendidos.cantidad * productos_vendidos.precio) as total"))
-            ->groupBy("ventas.id", "ventas.created_at", "ventas.updated_at", "ventas.id_cliente")
-            ->get();
-        return view("ventas.ventas_index", ["ventas" => $ventasConTotales,]);
+        // Obtiene el usuario autenticado
+        $user = auth()->user();
+    
+        // Verifica si el usuario es administrador
+        if ($user->hasRole('test')) {
+            // Si es administrador, puede ver todas las ventas
+            $ventas = Venta::with('usuario')
+                           ->join("productos_vendidos", "productos_vendidos.id_venta", "=", "ventas.id")
+                           ->select("ventas.*", DB::raw("sum(productos_vendidos.cantidad * productos_vendidos.precio) as total"))
+                           ->groupBy("ventas.id", "ventas.created_at", "ventas.updated_at", "ventas.id_usuario")
+                           ->get();
+        } else {
+            // Si no es administrador, solo puede ver sus propias ventas
+            $ventas = Venta::where('id_usuario', $user->id)
+                           ->with('usuario')
+                           ->join("productos_vendidos", "productos_vendidos.id_venta", "=", "ventas.id")
+                           ->select("ventas.*", DB::raw("sum(productos_vendidos.cantidad * productos_vendidos.precio) as total"))
+                           ->groupBy("ventas.id", "ventas.created_at", "ventas.updated_at", "ventas.id_usuario")
+                           ->get();
+        }
+    
+        return view("ventas.ventas_index", ["ventas" => $ventas]);
     }
+    
+
 
     /**
      * Show the form for creating a new resource.
@@ -94,6 +77,7 @@ class VentasController extends Controller
      */
     public function show(Venta $venta)
     {
+
         $total = 0;
         foreach ($venta->productos as $producto) {
             $total += $producto->cantidad * $producto->precio;
@@ -102,6 +86,19 @@ class VentasController extends Controller
             "venta" => $venta,
             "total" => $total,
         ]);
+    }
+
+    public function generatePDF($id)
+    {
+        // Carga la venta junto con el usuario y productos
+        $venta = Venta::with(['usuario', 'productos'])
+                      ->findOrFail($id);
+    
+        // Genera el PDF usando la vista 'ventas.pdf_ticket', pasando los datos de la venta
+        $pdf = PDF::loadView('ventas.pdf_ticket', ['venta' => $venta]);
+    
+        // Descarga el PDF con un nombre de archivo basado en el ID de la venta
+        return $pdf->download('ticket_venta_' . $venta->id . '.pdf');
     }
 
     /**

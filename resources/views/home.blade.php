@@ -2,7 +2,7 @@
 @section("titulo", "Inicio")
 @section('contenido')
     <div class="col-12 text-center">
-        <h1>Bienvenido, {{Auth::user()->name}}</h1>
+        <h1>Bienvenido {{Auth::user()->name}}</h1>
     </div>
     @foreach([
     ["productos", "ventas", "vender", "clientes"],
@@ -35,6 +35,7 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">

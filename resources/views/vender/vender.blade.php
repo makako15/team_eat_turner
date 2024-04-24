@@ -10,14 +10,8 @@
                 <div class="col-12 col-md-6">
                     <form action="{{route("terminarOCancelarVenta")}}" method="post">
                         @csrf
-                        <div class="form-group">
-                            <label for="id_cliente">Cliente</label>
-                            <select required class="form-control" name="id_cliente" id="id_cliente">
-                                @foreach($clientes as $cliente)
-                                    <option value="{{$cliente->id}}">{{ Auth::user()->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                        <label></label>
+            <p>{{ $usuario->name }}</p> 
                         @if(session("productos") !== null)
                             <div class="form-group">
                                 <button name="accion" value="terminar" type="submit" class="btn btn-success">Terminar
@@ -245,7 +239,7 @@
                 <!--<button class="boton-item">Agregar al Carrito</button>-->
             </div>
         </div>
-         Carrito de Compras 
+          
         <div class="carrito" id="carrito">
             <div class="header-carrito">
                 <h2>Tu Carrito</h2>
@@ -266,5 +260,5 @@
     </section>
     <script src="/js/aplicacion.js"></script>
 </body>
-</html>-->
+</html>
 @endsection

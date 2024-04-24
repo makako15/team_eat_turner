@@ -4,7 +4,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Cliente;
+use App\User;
 use App\Producto;
 use App\ProductoVendido;
 use App\Venta;
@@ -26,7 +26,7 @@ class VenderController extends Controller
     {
         // Crear una venta
         $venta = new Venta();
-        $venta->id_cliente = $request->input("id_cliente");
+        $venta->id_usuario = auth()->user()->id;
         $venta->saveOrFail();
         $idVenta = $venta->id;
         $productos = $this->obtenerProductos();
@@ -160,7 +160,7 @@ class VenderController extends Controller
         return view("vender.vender",
             [
                 "total" => $total,
-                "clientes" => Cliente::all(),
+                "usuario" => auth()->user()
             ]);
     }
 }

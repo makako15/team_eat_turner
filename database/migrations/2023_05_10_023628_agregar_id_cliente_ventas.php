@@ -14,10 +14,10 @@ class AgregarIdClienteVentas extends Migration
     public function up()
     {
         Schema::table('ventas', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_cliente');
-            $table->foreign("id_cliente")
+            $table->unsignedBigInteger('id_usuario');
+            $table->foreign("id_usuario")
                 ->references("id")
-                ->on("clientes")
+                ->on("users")
                 ->onDelete("cascade")
                 ->onUpdate("cascade");
         });

@@ -14,6 +14,11 @@
             /*Para la barra inferior fija*/
             padding-bottom: 70px;
         }
+        .d-block.w-100 {
+    max-height: 540px; /* Ajusta este valor según tus necesidades */
+    object-fit: cover; /* Esto asegura que la imagen cubra el área asignada sin distorsionarse */
+}
+
     </style>
 </head>
 <body>
@@ -54,9 +59,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route("usuarios.index")}}">Usuarios&nbsp;<i class="fa fa-users"></i></a>
                 </li>
-                <li class="nav-item">
+              <!--  <li class="nav-item">
                     <a class="nav-link" href="{{route("clientes.index")}}">Clientes&nbsp;<i class="fa fa-users"></i></a>
-                </li>
+                </li>-->
                 @endcan
             @endguest
         </ul>
