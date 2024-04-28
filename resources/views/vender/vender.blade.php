@@ -11,7 +11,7 @@
                     <form action="{{route("terminarOCancelarVenta")}}" method="post">
                         @csrf
                         <label></label>
-            <p>{{ $usuario->name }}</p> 
+            <p class="usuario">{{ $usuario->name }}</p> 
                         @if(session("productos") !== null)
                             <div class="form-group">
                                 <button name="accion" value="terminar" type="submit" class="btn btn-success">Terminar
@@ -28,7 +28,7 @@
                     <form action="{{route("agregarProductoVenta")}}" method="post">
                         @csrf
                         <div class="form-group">
-                            <label for="codigo">Código del producto</label>
+                            <label class="codigo" for="codigo">Código del producto</label>
                             <input id="codigo" autocomplete="off" required autofocus name="codigo" type="text"
                                    class="form-control"
                                    placeholder="Código del producto">
@@ -237,24 +237,6 @@
                 <span class="precio-item">Codigo 20</span>
                 <span class="precio-item">$18.00</span>
                 <!--<button class="boton-item">Agregar al Carrito</button>-->
-            </div>
-        </div>
-          
-        <div class="carrito" id="carrito">
-            <div class="header-carrito">
-                <h2>Tu Carrito</h2>
-            </div>
-
-                <div class="carrito-items">
-            
-                </div>
-            <div class="carrito-total">
-                <div class="fila">
-                    <strong>Tu Total</strong>
-                    <span class="carrito-precio-total">
-                    </span>
-                </div>
-                <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
             </div>
         </div>
     </section>

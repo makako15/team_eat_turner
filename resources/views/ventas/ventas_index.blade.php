@@ -10,6 +10,7 @@
                 <table class="table table-bordered">
                     <thead>
                     <tr>
+                        <th>No. Venta</th>
                         <th>Fecha</th>
                         <th>Cliente</th>
                         <th>Total</th>
@@ -23,6 +24,7 @@
                     <tbody>
                     @foreach($ventas as $venta)
                         <tr>
+                            <td>{{$venta->id}}</td>
                             <td>{{$venta->created_at}}</td>
                             <td>{{$venta->usuario->name}}</td>
                             <td>${{number_format($venta->total, 2)}}</td>

@@ -32,6 +32,7 @@ class VentasController extends Controller
                            ->join("productos_vendidos", "productos_vendidos.id_venta", "=", "ventas.id")
                            ->select("ventas.*", DB::raw("sum(productos_vendidos.cantidad * productos_vendidos.precio) as total"))
                            ->groupBy("ventas.id", "ventas.created_at", "ventas.updated_at", "ventas.id_usuario")
+                           ->orderBy("ventas.created_at", "desc")
                            ->get();
         } else {
             // Si no es administrador, solo puede ver sus propias ventas
@@ -40,6 +41,7 @@ class VentasController extends Controller
                            ->join("productos_vendidos", "productos_vendidos.id_venta", "=", "ventas.id")
                            ->select("ventas.*", DB::raw("sum(productos_vendidos.cantidad * productos_vendidos.precio) as total"))
                            ->groupBy("ventas.id", "ventas.created_at", "ventas.updated_at", "ventas.id_usuario")
+                           ->orderBy("ventas.created_at", "desc")
                            ->get();
         }
     

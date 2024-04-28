@@ -8,6 +8,7 @@
     <title>Team Eat Turner</title>
     <link href="{{url("/css/bootstrap.min.css")}}" rel="stylesheet">
     <link href="{{url("/css/all.min.css")}}" rel="stylesheet">
+    <link rel="stylesheet" href="/css/estilos.css">
     <style>
         body {
             padding-top: 70px;
@@ -15,14 +16,14 @@
             padding-bottom: 70px;
         }
         .d-block.w-100 {
-    max-height: 540px; /* Ajusta este valor según tus necesidades */
-    object-fit: cover; /* Esto asegura que la imagen cubra el área asignada sin distorsionarse */
-}
-
+        max-height: 540px; 
+        object-fit: cover;
+        }
+        
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" id="navar">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <button class="navbar-toggler" type="button" data-toggle="collapse"
             id="botonMenu" aria-label="Mostrar u ocultar menú">
         <span class="navbar-toggler-icon"></span>
