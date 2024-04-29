@@ -2,95 +2,101 @@
 @extends("maestra")
 @section("titulo", "Realizar venta")
 @section("contenido")
-    <div class="row">
-        <div class="col-12">
-            <h1>Nueva venta <i class="fa fa-cart-plus"></i></h1>
-            @include("notificacion")
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <form action="{{route("terminarOCancelarVenta")}}" method="post">
-                        @csrf
-                        <label></label>
-            <p class="usuario">{{ $usuario->name }}</p> 
-                        @if(session("productos") !== null)
-                            <div class="form-group">
-                                <button name="accion" value="terminar" type="submit" class="btn btn-success">Terminar
-                                    venta
-                                </button>
-                                <button name="accion" value="cancelar" type="submit" class="btn btn-danger">Cancelar
-                                    venta
-                                </button>
-                            </div>
-                        @endif
-                    </form>
-                </div>
-                <div class="col-12 col-md-6">
-                    <form action="{{route("agregarProductoVenta")}}" method="post">
-                        @csrf
+<div class="row">
+    <div class="col-12">
+        <h1>Nueva venta <i class="fa fa-cart-plus"></i></h1>
+        @include("notificacion")
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <form action="{{route("terminarOCancelarVenta")}}" method="post">
+                    @csrf
+                    <label></label>
+                    <p class="usuario">{{ $usuario->name }}</p> 
+                    @if(session("productos") !== null)
                         <div class="form-group">
-                            <label class="codigo" for="codigo">Código del producto</label>
-                            <input id="codigo" autocomplete="off" required autofocus name="codigo" type="text"
-                                   class="form-control"
-                                   placeholder="Código del producto">
+                            <!-- Botón modificado para mostrar ventana emergente -->
+                            <button id="terminarVenta" type="button" class="btn btn-success">Terminar venta</button>
+                            <button name="accion" value="cancelar" type="submit" class="btn btn-danger">Cancelar venta</button>
                         </div>
-                    </form>
-                </div>
-            </div>
-            @if(session("productos") !== null)
-                <h2>Total: ${{number_format($total, 2)}}</h2>
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <th>Código de producto</th>
-                            <th>Descripción</th>
-                            <th>Precio</th>
-                            <th>Cantidad</th>
-                            <th>Quitar</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach(session("productos") as $producto)
-                            <tr>
-                                <td>{{$producto->codigo_barras}}</td>
-                                <td>{{$producto->descripcion}}</td>
-                                <td>${{number_format($producto->precio_venta, 2)}}</td>
-                                <td>{{$producto->cantidad}}</td>
-                                <td>
-                                    <form action="{{route("quitarProductoDeVenta")}}" method="post">
-                                        @method("delete")
-                                        @csrf
-                                        <input type="hidden" name="indice" value="{{$loop->index}}">
-                                        <button type="submit" class="btn btn-danger">
-                                            <i class="fa fa-trash"></i>
+                        <!-- Ventana emergente para elegir la acción después de terminar la venta -->
+                        <div class="modal fade" id="modalAccionesVenta" tabindex="-1" role="dialog" aria-labelledby="modalAccionesVentaLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalAccionesVentaLabel">Acciones post venta</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
                                         </button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            @else
-                <h2>Catalogo de Productos
-                    <br>
-                    <!--Escanea el código de barras o escribe y presiona Enter</h2>-->
-            @endif
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Selecciona una acción:</p>
+                                        <button id="pagarEnCafeteria" name="accion" value="terminar" type="submit" class="btn btn-success">Pagar en cafetería</button>
+                                        <button id="hacerTransferencia" type="button" class="btn btn-primary">Hacer transferencia</button>
+                                        <button id="Cancelar" name="accion" value="cancelar" type="submit" class="btn btn-danger">Cancelar venta</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                </form>
+            </div>
+            <div class="col-12 col-md-6">
+                <form action="{{route("agregarProductoVenta")}}" method="post">
+                    @csrf
+                    <div class="sticky">
+                        <label class="codigo" for="codigo">Código del producto</label>
+                        <input id="codigo" autocomplete="off" required autofocus name="codigo" type="text"
+                               class="form-control"
+                               placeholder="Escriba el código del producto">
+                    </div>
+                </form>
+            </div>
         </div>
+        <div class="content">
+        @if(session("productos") !== null)
+            <h2>Total: ${{number_format($total, 2)}}</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Código de producto</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Quitar</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach(session("productos") as $producto)
+                        <tr>
+                            <td>{{$producto->codigo_barras}}</td>
+                            <td>{{$producto->descripcion}}</td>
+                            <td>${{number_format($producto->precio_venta, 2)}}</td>
+                            <td>{{$producto->cantidad}}</td>
+                            <td>
+                                <form action="{{route("quitarProductoDeVenta")}}" method="post">
+                                    @method("delete")
+                                    @csrf
+                                    <input type="hidden" name="indice" value="{{$loop->index}}">
+                                    <button type="submit" class="btn btn-danger">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        @else
+            <h2>Catalogo de Productos
+                <br>
+        @endif
     </div>
-    
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/css/estilos.css">
-    <script src="app.js" async></script>
-    <title>Team Eat Turner</title>
-</head>
-<body>
+</div>
+</div>
+
     <header>
         
     </header>
@@ -240,7 +246,41 @@
             </div>
         </div>
     </section>
-    <script src="/js/aplicacion.js"></script>
-</body>
-</html>
+   
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('terminarVenta').addEventListener('click', function () {
+                document.getElementById('modalAccionesVenta').classList.add('show');
+                document.getElementById('modalAccionesVenta').style.display = 'block';
+            });
+
+            document.getElementById('pagarEnCafeteria').addEventListener('click', function () {
+                document.forms[0].submit();
+            });
+
+            document.getElementById('hacerTransferencia').addEventListener('click', function () {
+                window.location.href = "{{ route('transferencia') }}";
+            });
+
+            document.getElementById('Cancelar').addEventListener('click', function () {
+                document.getElementById('modalAccionesVenta').classList.remove('show');
+                document.getElementById('modalAccionesVenta').style.display = 'none';
+            });
+
+            var modal = document.getElementById('modalAccionesVenta');
+            var closeButton = document.querySelector('#modalAccionesVenta .close');
+            closeButton.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+
+            modal.addEventListener('hide.bs.modal', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            });
+        });
+    </script>
+
 @endsection
+
+
+<!--   -->

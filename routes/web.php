@@ -27,8 +27,6 @@ Route::get("/logout", function () {
 })->name("logout");
 
 Route::get('/controlador', 'RolesController@roles');
-
-
 Route::middleware("auth")
     ->group(function () {
         Route::resource("clientes", "ClientesController");
@@ -37,6 +35,7 @@ Route::middleware("auth")
         Route::get('/ventas/{id}/ticket', 'VentasController@generatePDF')->name('ventas.ticket');
         Route::resource("ventas", "VentasController");
         Route::get("/vender", "VenderController@index")->name("vender.index");
+        Route::get("/transferencia", "VenderController@transferencia")->name("transferencia");
         Route::post("/productoDeVenta", "VenderController@agregarProductoVenta")->name("agregarProductoVenta");
         Route::delete("/productoDeVenta", "VenderController@quitarProductoDeVenta")->name("quitarProductoDeVenta");
         Route::post("/terminarOCancelarVenta", "VenderController@terminarOCancelarVenta")->name("terminarOCancelarVenta");

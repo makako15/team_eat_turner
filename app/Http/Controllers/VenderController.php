@@ -51,7 +51,7 @@ class VenderController extends Controller
         $this->vaciarProductos();
         return redirect()
             ->route("vender.index")
-            ->with("mensaje", "Venta terminada");
+            ->with("mensaje", "Pedido terminado");
     }
 
     private function obtenerProductos()
@@ -162,5 +162,10 @@ class VenderController extends Controller
                 "total" => $total,
                 "usuario" => auth()->user()
             ]);
+    }
+
+
+    public function transferencia(){
+        return view("vender.transferencia");
     }
 }

@@ -75,6 +75,32 @@ header h1{
 .usuario{
     font-size: 30px;
 }
+#volver{
+    position: fixed;
+    left: 200px;
+}
+.sticky {
+    position: fixed;
+    top: 45px;
+    left: 1000px;
+    width: 100%;
+    z-index: 1000; /* Asegura que el buscador esté por encima de otros elementos */
+    padding: 10px; /* Espaciado interno para que el contenido no se solape */
+    background: rgb(239, 221, 221);
+    transition: top 1s ease; /* Animación suave al cambiar la posición */
+}
+.form-control {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    max-width: 300px; /* Establece el ancho máximo del input */
+}
+/* Ajusta el espacio superior del contenido principal para evitar que se solape con el buscador fijo */
+.content {
+    padding-top: 50px; /* Ajusta según sea necesario para evitar superposiciones */
+}
 table {
     width: 100%;
     border-collapse: collapse;
