@@ -230,6 +230,7 @@ tr:hover {
     background-image: url('/img/5.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     z-index: -1;
       }
 #login{
@@ -272,7 +273,7 @@ tr:hover {
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
-      }
+    }
 #registro{
     color: #fff;
     font-size: 40px;
@@ -328,6 +329,9 @@ tr:hover {
 .card-text {
     font-size: 16px; /* Ajusta el tamaño de fuente del texto de la tarjeta */
 }
+
+
+
 
 
 

@@ -22,7 +22,7 @@
         
     </style>
 </head>
-<body>
+<body class = "fondo">
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <button class="navbar-toggler" type="button" data-toggle="collapse"
             id="botonMenu" aria-label="Mostrar u ocultar menú">
