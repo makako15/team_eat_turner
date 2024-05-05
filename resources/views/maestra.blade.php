@@ -33,7 +33,7 @@
         <ul class="navbar-nav mr-auto">
             @guest
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                    <a class="nav-link" href="{{ route('login') }}">Inicia sesión</a>
                 </li>
 
                 <li class="nav-item">

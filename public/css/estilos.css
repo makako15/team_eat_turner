@@ -75,25 +75,31 @@ header h1{
 .usuario{
     font-size: 30px;
 }
+#hacerTransferencia{
+    position: absolute;
+    left: 250px;
+}
+
 #volver{
     position: fixed;
     left: 200px;
 }
-.sticky {
+
+#codigo {
     position: fixed;
-    top: 45px;
+    top: 60px;
     left: 1000px;
-    width: 100%;
+    width: 20%;
     z-index: 1000; /* Asegura que el buscador esté por encima de otros elementos */
     padding: 10px; /* Espaciado interno para que el contenido no se solape */
-    background: rgb(239, 221, 221);
+    background: rgb(255, 255, 255);
     transition: top 1s ease; /* Animación suave al cambiar la posición */
 }
-.form-control {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.codigo {
+    position: fixed;
+    top: 60px;
+    left: 1300px;
+    z-index: 1000;
     font-size: 16px;
     max-width: 300px; /* Establece el ancho máximo del input */
 }
@@ -107,7 +113,7 @@ table {
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(228, 223, 168, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: #fff;
 }
 

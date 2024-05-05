@@ -24,16 +24,15 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="modalAccionesVentaLabel">Acciones post venta</h5>
+                                        <h5 class="modal-title" id="modalAccionesVentaLabel">Selecciona una opción</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Selecciona una acción:</p>
                                         <button id="pagarEnCafeteria" name="accion" value="terminar" type="submit" class="btn btn-success">Pagar en cafetería</button>
                                         <button id="hacerTransferencia" type="button" class="btn btn-primary">Hacer transferencia</button>
-                                        <button id="Cancelar" name="accion" value="cancelar" type="submit" class="btn btn-danger">Cancelar venta</button>
+                                       <!-- <button id="Cancelar" name="accion" value="cancelar" type="submit" class="btn btn-danger">Cancelar venta</button>-->
                                     </div>
                                 </div>
                             </div>
@@ -42,15 +41,16 @@
                 </form>
             </div>
             <div class="col-12 col-md-6">
+            @if(!Auth::user()->hasRole('test'))
                 <form action="{{route("agregarProductoVenta")}}" method="post">
                     @csrf
-                    <div class="sticky">
+                    
                         <label class="codigo" for="codigo">Código del producto</label>
                         <input id="codigo" autocomplete="off" required autofocus name="codigo" type="text"
                                class="form-control"
                                placeholder="Escriba el código del producto">
-                    </div>
                 </form>
+               @endif
             </div>
         </div>
         <div class="content">
@@ -262,10 +262,10 @@
                 window.location.href = "{{ route('transferencia') }}";
             });
 
-            document.getElementById('Cancelar').addEventListener('click', function () {
+            /*document.getElementById('Cancelar').addEventListener('click', function () {
                 document.getElementById('modalAccionesVenta').classList.remove('show');
                 document.getElementById('modalAccionesVenta').style.display = 'none';
-            });
+            });*/
 
             var modal = document.getElementById('modalAccionesVenta');
             var closeButton = document.querySelector('#modalAccionesVenta .close');
