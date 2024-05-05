@@ -55,7 +55,7 @@
     }
 
 body{
-    background: rgb(239, 221, 221);
+    background: rgb(253 209 122);
 }
 header{
     margin: 0px 0px 0px 0px;
@@ -69,6 +69,76 @@ header h1{
     color: #fff;
     padding: 30px 0;
 }
+.carousel-container {
+    max-width: 60vw; /* Limita el ancho del contenedor al 80% del ancho de la ventana del navegador */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    overflow: hidden;
+}
+
+.carousel-inner {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%; /* Asegura que el carrusel ocupe todo el ancho del contenedor */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto; /* Altura automática para mantener la relación de aspecto */
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    color: white;
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+.carousel-indicators {
+    bottom: 10px;
+    text-align: center;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-indicators .active {
+    background-color: white;
+}
+
 .codigo{
     font-size: 20px;
 }
@@ -227,6 +297,7 @@ tr:hover {
     cursor: pointer;
 }
  /* LOGIN */
+ /* LOGIN */
 .background-image {
     position: fixed;
     top: 10%;
@@ -265,7 +336,7 @@ tr:hover {
     margin: 0 0 0 100px;
 }
 #boton{
-    margin: 0 0 0 120px;
+    margin: 0 0 0 120px;
 }
 
  /* REGISTRO */
@@ -317,32 +388,73 @@ tr:hover {
 #boton{
     margin: 0 0 0 120px;
 }
-
-.card {
-    background-color: #ecd5e653;
-    margin-bottom: 20px;
-    max-width: 300px; /* Ajusta el ancho máximo de las tarjetas según sea necesario */
+.card-group-soporte {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-.card-body {
-    font-size: 16px; /* Ajusta el tamaño de fuente del contenido de la tarjeta */
+.card-soporte {
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: #fff; /* Fondo blanco */
 }
 
-.card-title {
-    font-size: 24px; /* Ajusta el tamaño de fuente del título de la tarjeta */
+.card-soporte:hover {
+    transform: translateY(-5px);
 }
 
-.card-text {
-    font-size: 16px; /* Ajusta el tamaño de fuente del texto de la tarjeta */
+.card-img-top-soporte {
+    width: 100%;
+    height: 200px; /* Altura deseada de la imagen */
+    object-fit: contain; /* Ajusta la imagen dentro del contenedor sin distorsión */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body-soporte {
+    padding: 20px;
+}
+
+.card-title-soporte {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text-soporte {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.card-soporte h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #007bff;
 }
 
 
+/* Estilos para el texto dentro de la carta */
+.carta .carta-text {
+    margin-bottom: 5px; /* Espaciado entre párrafos */
+    font-size: 16px; /* Tamaño de fuente */
+    line-height: 1.6; /* Altura de línea */
+}
 
+/* Estilos para los encabezados */
+.carta .carta-text strong {
+    color: #343a40; /* Color del texto */
+    font-size: 18px; /* Tamaño de fuente */
+    margin-bottom: 0px; /* Espaciado inferior */
+    display: block; /* Mostrar como bloque para separarlo del párrafo siguiente */
+}
 
-
-
-
-
-
-
- 
+/* Estilos adicionales para el contenedor de la carta */
+.carta .carta-body {
+    text-align: justify; /* Justificar el texto */
+}

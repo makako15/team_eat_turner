@@ -15,10 +15,6 @@
             /*Para la barra inferior fija*/
             padding-bottom: 70px;
         }
-        .d-block.w-100 {
-        max-height: 540px; 
-        object-fit: cover;
-        }
         
     </style>
 </head>
@@ -79,7 +75,7 @@
                         class="fa fa-hands-helping"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route("acerca_de.index")}}">TERMINOS Y CONDICIONES&nbsp;<i class="fa fa-info"></i></a>
+                <a class="nav-link" href="{{route("acerca_de.index")}}">Terminos y Condiciones&nbsp;<i class="fa fa-info"></i></a>
             </li>
         </ul>
     </div>

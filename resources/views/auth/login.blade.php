@@ -3,12 +3,12 @@
     Login
 @endsection
 @section('contenido')
-<link rel="stylesheet" type="text/css" href="/css/estilos.css">
-    <div class="row justify-content-center">
+<div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
             <div class="background-image">
             <div class="card-header" id="login">Iniciar Sesión</div>
+
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
