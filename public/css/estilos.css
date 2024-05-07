@@ -55,7 +55,7 @@
     }
 
 body{
-    background: rgb(253 209 122);
+    background: rgb(255, 237, 203);
 }
 header{
     margin: 0px 0px 0px 0px;
@@ -184,7 +184,8 @@ table {
     overflow: hidden;
     margin-bottom: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    background-color: #fcdeb7;
+    font-size: 20px;
 }
 
 th, td {
@@ -193,16 +194,16 @@ th, td {
     text-align: center;
 }
 th {
-    background-color: #f0a5db53;
+    background-color: #dab672;
     font-weight: bold;
 }
 
 tr:nth-child(even) {
-    background-color: rgb(239, 221, 221);
+    background-color: rgb(252, 225, 187);
 }
 
 tr:hover {
-    background-color: #f7e6e6;
+    background-color: #dab672;
 }
 
 .btn {
