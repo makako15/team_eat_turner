@@ -4,7 +4,7 @@
 
     <div class="col-12 text-center">
         <h1>Bienvenido {{Auth::user()->name}}</h1>
-    </div>
+    </div><br><br>
     <div class="carousel-container">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
