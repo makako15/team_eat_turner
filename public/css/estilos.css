@@ -263,6 +263,7 @@ tr:hover {
     border-radius: 10px;
     padding: 20px;
     transition: .3s;
+    
 }
 .contenedor .contenedor-items .item .img-item{
     width: 150px;
@@ -304,11 +305,11 @@ tr:hover {
     left: 15%;
     width: 70%;
     height: 70%;
-    background-image: url('/img/5.jpg');
+    background-image: url('/img/log.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    z-index: -1;
+    z-index: -1;
       }
 #login{
     color: #fff;
